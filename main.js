@@ -86,7 +86,7 @@ const createWindow = () => {
   function convertHand(handLines, handNumber) {
     let convertedHand = '';
     const seatMap = {};    // Maps player names to positions
-    const seatsInfo = {};  // Maps output seat numbers to { playerName, position }
+    const seatsInfo = {};  // Maps output seat numbers to { playerName, position, stackSize }
     let buttonSeat = 0;
     let isFirstLine = true; // Indicator to track the first line
     let inSummarySection = false;
@@ -94,6 +94,8 @@ const createWindow = () => {
     let actionLines = [];
     let potInfo = '';
     let boardLine = '';
+    let smallBlindAmount = '';
+    let bigBlindAmount = '';
 
     // Map input seat numbers to output seat numbers
     const seatConversionMap = {
@@ -127,30 +129,33 @@ const createWindow = () => {
             }
             convertedHand += `Table 'PioSolver Table' 6-max Seat #${buttonSeat} is the button\n`;
         } else if (line.startsWith('Seat') && !inSummarySection) {
-            const match = line.match(/Seat (\d+): (\S+)(.*)/);
+            const match = line.match(/Seat (\d+): (\S+)(.+)/);
             if (match) {
                 const inputSeatNumber = parseInt(match[1], 10);
                 const outputSeatNumber = seatConversionMap[inputSeatNumber];
                 const playerName = match[2];
                 const restOfLine = match[3];
                 const position = positionMap[outputSeatNumber];
+
+                // Extract stack size
+                const stackMatch = restOfLine.match(/\((.+) in chips\)/);
+                const stackSize = stackMatch ? stackMatch[1] : '$0.00';
+
                 seatMap[playerName] = position;
-                seatsInfo[outputSeatNumber] = { playerName, position };
+                seatsInfo[outputSeatNumber] = { playerName, position, stackSize };
             }
         } else if (line.includes('posts small blind')) {
-            actionLines.push(`${positionMap[1]}: posts small blind $5.00`);
+            const blindMatch = line.match(/posts small blind \$(\d+\.\d+)/);
+            smallBlindAmount = blindMatch ? blindMatch[1] : '0.00';
+            const playerName = line.split(':')[0];
+            const position = seatMap[playerName];
+            actionLines.push(`${position}: posts small blind $${smallBlindAmount}`);
         } else if (line.includes('posts big blind')) {
-            actionLines.push(`${positionMap[2]}: posts big blind $10.00`);
-        } else if (line.startsWith('*** HOLE CARDS ***')) {
-            actionLines.push('*** HOLE CARDS ***');
-        } else if (line.startsWith('*** FLOP ***')) {
-            actionLines.push(line);
-        } else if (line.startsWith('*** TURN ***')) {
-            actionLines.push(line);
-        } else if (line.startsWith('*** RIVER ***')) {
-            actionLines.push(line);
-        } else if (line.startsWith('*** SHOW DOWN ***')) {
-            actionLines.push('*** SHOW DOWN ***');
+            const blindMatch = line.match(/posts big blind \$(\d+\.\d+)/);
+            bigBlindAmount = blindMatch ? blindMatch[1] : '0.00';
+            const playerName = line.split(':')[0];
+            const position = seatMap[playerName];
+            actionLines.push(`${position}: posts big blind $${bigBlindAmount}`);
         } else if (line.startsWith('*** SUMMARY ***')) {
             inSummarySection = true;
         } else if (inSummarySection) {
@@ -163,22 +168,25 @@ const createWindow = () => {
             }
         } else {
             // Process action lines
-            const actionMatch = line.match(/(\S+): (.+)/);
+            const actionMatch = line.match(/^(\S+): (.+)/);
             if (actionMatch) {
                 const playerName = actionMatch[1];
                 const actionText = actionMatch[2];
                 const position = seatMap[playerName];
+
                 if (position) {
                     actionLines.push(`${position}: ${actionText}`);
                 } else {
-                    actionLines.push(line);
+                    actionLines.push(line); // If position not found, include the line as is
                 }
+            } else if (line.startsWith('***')) {
+                // Phase changes (e.g., HOLE CARDS, FLOP, TURN, RIVER)
+                actionLines.push(line);
             } else if (line.includes('collected')) {
-                // Handle collection lines
-                const match = line.match(/(\S+)\s?collected \$(\d+\.\d+) from pot/);
-                if (match) {
-                    const playerName = match[1];
-                    const amount = match[2];
+                const collectMatch = line.match(/^(\S+) collected \$(\d+\.\d+)/);
+                if (collectMatch) {
+                    const playerName = collectMatch[1];
+                    const amount = collectMatch[2];
                     const position = seatMap[playerName];
                     if (position) {
                         actionLines.push(`${position} collected $${amount} from the pot`);
@@ -193,11 +201,11 @@ const createWindow = () => {
         }
     });
 
-    // Output seat lines in order
+    // Output seat lines in order with actual stack sizes
     for (let seatNum = 1; seatNum <= 6; seatNum++) {
         if (seatsInfo[seatNum]) {
-            const { position } = seatsInfo[seatNum];
-            convertedHand += `Seat ${seatNum}: ${position} ($1000.00 in chips)\n`;
+            const { stackSize, position } = seatsInfo[seatNum];
+            convertedHand += `Seat ${seatNum}: ${position} (${stackSize} in chips)\n`;
         }
     }
 
@@ -206,12 +214,12 @@ const createWindow = () => {
         convertedHand += line + '\n';
     });
 
-    // Output pot info and board if present
-    if (potInfo) convertedHand += potInfo + '\n';
-    if (boardLine) convertedHand += boardLine + '\n';
-
     if (summaryLines.length > 0) {
         convertedHand += '*** SUMMARY ***\n';
+
+        // Output pot info and board after *** SUMMARY *** and before seat specifics
+        if (potInfo) convertedHand += potInfo + '\n';
+        if (boardLine) convertedHand += boardLine + '\n';
 
         // Re-map and sort the summary seat lines
         const remappedSummaries = [];
@@ -227,11 +235,16 @@ const createWindow = () => {
 
                 let blindText = '';
                 if (outputSeatNumber === 1) blindText = ' (small blind)';
-                if (outputSeatNumber === 2) blindText = ' (big blind)';
+                else if (outputSeatNumber === 2) blindText = ' (big blind)';
+
+                // Remove duplicate role annotations in restOfLine
+                let restLineClean = restOfLine.replace(/\(small blind\)\s*/g, '')
+                                              .replace(/\(big blind\)\s*/g, '')
+                                              .replace(/\(button\)\s*/g, '');
 
                 remappedSummaries.push({
                     seatNum: outputSeatNumber,
-                    line: `Seat ${outputSeatNumber}: ${position}${buttonText}${blindText}${restOfLine}`
+                    line: `Seat ${outputSeatNumber}: ${position}${buttonText}${blindText}${restLineClean}`
                 });
             }
         });

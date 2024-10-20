@@ -1,0 +1,87 @@
+PokerStars Zoom Hand #1000000001:  Hold'em No Limit ($1.00/$2.00) - 2023/01/21 0:14:45 ET
+Table 'Aenna' 6-max Seat #1 is the button
+Seat 1: Bot5kkreg4 ($200.00 in chips)
+Seat 2: Bot5kkreg3 ($200.00 in chips)
+Seat 3: Bot5kkreg5 ($200.00 in chips)
+Seat 4: Bot5kkreg1 ($200.00 in chips)
+Seat 5: Bot5kkreg2 ($200.00 in chips)
+Seat 6: Bot5kkreg0 ($200.00 in chips)
+Bot5kkreg3: posts small blind $1.00
+Bot5kkreg5: posts big blind $2.00
+*** HOLE CARDS ***
+Bot5kkreg1: raises $2.40 to $4.40
+Bot5kkreg2: folds
+Bot5kkreg0: raises $10.60 to $15.00
+Bot5kkreg4: raises $19.00 to $34.00
+Bot5kkreg3: folds
+Bot5kkreg5: raises $166.00 to $200.00
+Bot5kkreg1: folds
+Bot5kkreg0: calls $185.00
+Bot5kkreg4: calls $166.00
+*** FLOP *** [Jh Qh 4c]
+*** TURN *** [Jh Qh 4c] [4h]
+*** RIVER *** [Jh Qh 4c 4h] [7s]
+*** SHOW DOWN ***
+Bot5kkreg0 collected $302.40 from pot
+Bot5kkreg4 collected $302.40 from pot
+Bot5kkreg4: shows [As Ah]
+Bot5kkreg3: shows [Js 6c]
+Bot5kkreg5: shows [Kc Ks]
+Bot5kkreg1: shows [Qs 9s]
+Bot5kkreg2: shows [Qd 7d]
+Bot5kkreg0: shows [Ac Ad]
+*** SUMMARY ***
+Total pot $605.40 | Rake $0.60
+Board [Jh Qh 4c 4h 7s]
+Seat 1: Bot5kkreg4 (button) showed [As Ah] and won ($302.40)
+Seat 2: Bot5kkreg3 (small blind) showed [Js 6c] and lost
+Seat 3: Bot5kkreg5 (big blind) showed [Kc Ks] and lost 
+Seat 4: Bot5kkreg1 showed [Qs 9s] and lost 
+Seat 5: Bot5kkreg2 showed [Qd 7d] and lost 
+Seat 6: Bot5kkreg0 showed [Ac Ad] and won ($302.40)
+
+
+
+
+
+PokerStars Zoom Hand #1000000002:  Hold'em No Limit ($1.00/$2.00) - 2023/01/21 0:14:45 ET
+Table 'Aenna' 6-max Seat #1 is the button
+Seat 1: Bot5kkreg1 ($200.00 in chips)
+Seat 2: Bot5kkreg4 ($200.00 in chips)
+Seat 3: Bot5kkreg5 ($200.00 in chips)
+Seat 4: Bot5kkreg2 ($200.00 in chips)
+Seat 5: Bot5kkreg3 ($200.00 in chips)
+Seat 6: Bot5kkreg0 ($200.00 in chips)
+Bot5kkreg4: posts small blind $1.00
+Bot5kkreg5: posts big blind $2.00
+*** HOLE CARDS ***
+Bot5kkreg2: raises $2.40 to $4.40
+Bot5kkreg3: folds
+Bot5kkreg0: folds
+Bot5kkreg1: calls $4.40
+Bot5kkreg4: folds
+Bot5kkreg5: raises $22.60 to $27.00
+Bot5kkreg2: calls $22.60
+Bot5kkreg1: raises $173.00 to $200.00
+Bot5kkreg5: calls $173.00
+Bot5kkreg2: folds
+*** FLOP *** [2c 7h 9s]
+*** TURN *** [2c 7h 9s] [4c]
+*** RIVER *** [2c 7h 9s 4c] [Qd]
+*** SHOW DOWN ***
+Bot5kkreg5 collected $427.40 from pot
+Bot5kkreg1: shows [Ah Kc]
+Bot5kkreg4: shows [Ac 2h]
+Bot5kkreg5: shows [Qc Qh]
+Bot5kkreg2: shows [Js Jd]
+Bot5kkreg3: shows [8s 6c]
+Bot5kkreg0: shows [Th 6h]
+*** SUMMARY ***
+Total pot $428.00 | Rake $0.60
+Board [2c 7h 9s 4c Qd]
+Seat 1: Bot5kkreg1 (button) showed [Ah Kc]
+Seat 2: Bot5kkreg4 (small blind) showed [Ac 2h] and lost
+Seat 3: Bot5kkreg5 (big blind) showed [Qc Qh] and won ($427.40) 
+Seat 4: Bot5kkreg2 showed [Js Jd] and lost 
+Seat 5: Bot5kkreg3 showed [8s 6c] and lost 
+Seat 6: Bot5kkreg0 showed [Th 6h] and lost 

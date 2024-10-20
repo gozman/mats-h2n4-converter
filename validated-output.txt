@@ -1,0 +1,92 @@
+PokerStars Zoom Hand #1000000001:  Hold'em No Limit ($1.00/$2.00) - 2023/01/21 0:14:45 ET
+Table 'PioSolver Table' 6-max Seat #6 is the button
+Seat 1: Pio_OOP ($200.00 in chips)
+Seat 2: Pio_IP ($200.00 in chips)
+Seat 3: Pio_EP ($200.00 in chips)
+Seat 4: Pio_MP ($200.00 in chips)
+Seat 5: Pio_CO ($200.00 in chips)
+Seat 6: Pio_BTN ($200.00 in chips)
+Pio_OOP: posts small blind $1.00
+Pio_IP: posts big blind $2.00
+*** HOLE CARDS ***
+Pio_EP: raises $2.40 to $4.40
+Pio_MP: folds
+Pio_CO: raises $10.60 to $15.00
+Pio_BTN: raises $19.00 to $34.00
+Pio_OOP: folds
+Pio_IP: raises $166.00 to $200.00
+Pio_EP: folds
+Pio_CO: calls $185.00
+Pio_BTN: calls $166.00
+*** FLOP *** [Jh Qh 4c]
+*** TURN *** [Jh Qh 4c] [4h]
+*** RIVER *** [Jh Qh 4c 4h] [7s]
+*** SHOW DOWN ***
+Pio_CO collected $302.40 from the pot
+Pio_BTN collected $302.40 from the pot
+Pio_BTN: shows [As Ah]
+Pio_OOP: shows [Js 6c]
+Pio_IP: shows [Kc Ks]
+Pio_EP: shows [Qs 9s]
+Pio_MP: shows [Qd 7d]
+Pio_CO: shows [Ac Ad]
+*** SUMMARY ***
+Total pot $605.40 | Rake $0.60
+Board [Jh Qh 4c 4h 7s]
+Seat 1: Pio_OOP (small blind)  showed [Js 6c] and lost
+Seat 2: Pio_IP (big blind)  showed [Kc Ks] and lost 
+Seat 3: Pio_EP showed [Qs 9s] and lost 
+Seat 4: Pio_MP showed [Qd 7d] and lost 
+Seat 5: Pio_CO showed [Ac Ad] and won ($302.40)
+Seat 6: Pio_BTN (button)  showed [As Ah] and won ($302.40)
+
+
+
+
+
+PokerStars Zoom Hand #1000000002:  Hold'em No Limit ($1.00/$2.00) - 2023/01/21 0:14:45 ET
+Table 'PioSolver Table' 6-max Seat #6 is the button
+Seat 1: Pio_OOP ($200.00 in chips)
+Seat 2: Pio_IP ($200.00 in chips)
+Seat 3: Pio_EP ($200.00 in chips)
+Seat 4: Pio_MP ($200.00 in chips)
+Seat 5: Pio_CO ($200.00 in chips)
+Seat 6: Pio_BTN ($200.00 in chips)
+Pio_OOP: posts small blind $1.00
+Pio_IP: posts big blind $2.00
+*** HOLE CARDS ***
+Pio_EP: raises $2.40 to $4.40
+Pio_MP: folds
+Pio_CO: folds
+Pio_BTN: calls $4.40
+Pio_OOP: folds
+Pio_IP: raises $22.60 to $27.00
+Pio_EP: calls $22.60
+Pio_BTN: raises $173.00 to $200.00
+Pio_IP: calls $173.00
+Pio_EP: folds
+*** FLOP *** [2c 7h 9s]
+*** TURN *** [2c 7h 9s] [4c]
+*** RIVER *** [2c 7h 9s 4c] [Qd]
+*** SHOW DOWN ***
+Pio_IP collected $427.40 from the pot
+Pio_BTN: shows [Ah Kc]
+Pio_OOP: shows [Ac 2h]
+Pio_IP: shows [Qc Qh]
+Pio_EP: shows [Js Jd]
+Pio_MP: shows [8s 6c]
+Pio_CO: shows [Th 6h]
+*** SUMMARY ***
+Total pot $428.00 | Rake $0.60
+Board [2c 7h 9s 4c Qd]
+Seat 1: Pio_OOP (small blind)  showed [Ac 2h] and lost
+Seat 2: Pio_IP (big blind)  showed [Qc Qh] and won ($427.40) 
+Seat 3: Pio_EP showed [Js Jd] and lost 
+Seat 4: Pio_MP showed [8s 6c] and lost 
+Seat 5: Pio_CO showed [Th 6h] and lost 
+Seat 6: Pio_BTN (button)  showed [Ah Kc]
+
+
+
+
+
