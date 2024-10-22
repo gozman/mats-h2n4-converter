@@ -22,8 +22,8 @@ Pio_BTN: calls $166.00
 *** TURN *** [Jh Qh 4c] [4h]
 *** RIVER *** [Jh Qh 4c 4h] [7s]
 *** SHOW DOWN ***
-Pio_CO collected $302.40 from the pot
-Pio_BTN collected $302.40 from the pot
+Pio_CO collected $302.40 from pot
+Pio_BTN collected $302.40 from pot
 Pio_BTN: shows [As Ah]
 Pio_OOP: shows [Js 6c]
 Pio_IP: shows [Kc Ks]
@@ -69,7 +69,7 @@ Pio_EP: folds
 *** TURN *** [2c 7h 9s] [4c]
 *** RIVER *** [2c 7h 9s 4c] [Qd]
 *** SHOW DOWN ***
-Pio_IP collected $427.40 from the pot
+Pio_IP collected $427.40 from pot
 Pio_BTN: shows [Ah Kc]
 Pio_OOP: shows [Ac 2h]
 Pio_IP: shows [Qc Qh]
